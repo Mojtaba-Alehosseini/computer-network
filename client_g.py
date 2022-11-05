@@ -4,14 +4,12 @@ import time
 from Tkinter import *
 ip = ""
 
-
 root1 = Tk()
 
 def ip_get():
     global ip
     ip = get_ip.get()
     root1.destroy()
-
 
 get_ip = Entry(root1)
 label = Label(root1 , text="Enter ip:")
@@ -21,19 +19,13 @@ label.grid()
 get_ip.grid()
 button1.grid()
 
-
-
 root1.mainloop()
-
-
-
 
 
 client = socket.socket()
 client.connect((ip , 12345))
 
 root = Tk()
-
 
 def send():
     data_send = get_text.get()
@@ -61,6 +53,5 @@ threading.Thread(target=recv).start()
 root.geometry("400x600")
 root.title("client")
 root.resizable(width=False , height=False)
-
 
 root.mainloop()
