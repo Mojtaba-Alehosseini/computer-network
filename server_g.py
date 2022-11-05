@@ -5,14 +5,12 @@ from Tkinter import Tk
 
 ip = ""
 
-
 root1 = Tk()
 
 def ip_get():
     global ip
     ip = get_ip.get()
     root1.destroy()
-
 
 get_ip = Entry(root1)
 label = Label(root1 , text="Enter ip:")
@@ -22,15 +20,12 @@ label.grid()
 get_ip.grid()
 button1.grid()
 
-
-
 root1.mainloop()
 
 server = socket.socket()
 server.bind((ip , 12345))
 server.listen(2)
 con , addr = server.accept()
-
 
 root = Tk()
 
@@ -46,9 +41,6 @@ def send():
         label = Label(frame , text=data_send , bg="red" , fg="white")
         label.pack(side=TOP , fill=X)
         edit_Text.delete(0 , END)
-
-
-
 
 
 def recv():
@@ -67,7 +59,6 @@ def update():
 
 button = Button(root , text="Send" , command=send)
 edit_Text = Entry(root)
-
 
 
 button.pack(fill=X , side=BOTTOM)
